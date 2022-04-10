@@ -5,13 +5,12 @@ A custom component to Home Assistant that read Swedish weather stations (ViVa) s
 ### Installation through HACS
 If you have not yet installed HACS, go get it at https://hacs.xyz/ and install.
 
-Then find the _Sjöfartsverket ViVa_ integration in HACS and install it. Configure the component as described below.
+Then find the _Sjöfartsverket ViVa_ integration in HACS and install it.
 
 Restart Home Assistant!
 
-Install the new integration through Configuration -> Integrations in HA (see below).
 ### Manual installation
-Inside the configuration folder in Home Assistant create folder ```custom_components``` if it's not already created. Create a new folder, ```sjofartsverket_viva``` in that folder and copy the files to the folder. Configure the component as described below.
+Inside the configuration folder in Home Assistant create the folder ```custom_components``` if it's not already created. Create a new folder, ```sjofartsverket_viva``` in that folder and copy the files to the folder.
 
 Restart Home Assistant!
 
