@@ -1,8 +1,8 @@
-# Usage
-Set up the sensor using yaml in the configuration file (```configuration.yaml```).
+# Sample configuration
+Set up the sensor using the configuration file (```configuration.yaml```).
 ```
 sensor vind:
-  platform: viva
+  platform: sjofartsverket_viva
   name: Vind
   region: 114
   scan_interval: 60

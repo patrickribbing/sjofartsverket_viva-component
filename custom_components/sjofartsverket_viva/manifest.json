@@ -1,11 +1,11 @@
 {
     "domain": "sjofartsverket_viva",
-    "name": "ViVa Wind and Water Information",
-    "documentation": "https://github.com/patrickribbing/viva-component",
-    "issue_tracker": "https://github.com/patrickribbing/viva-component/issues",
+    "name": "Sjöfartsverket ViVa",
+    "documentation": "https://github.com/patrickribbing/sjofartsverket_viva-component",
+    "issue_tracker": "https://github.com/patrickribbing/sjofartsverket_viva-component/issues",
     "dependencies": [],
     "codeowners": ["@patrickribbing"],
-    "version": "v1.2.1",
+    "version": "v1.0-alpha",
     "requirements": [],
     "iot_class": "cloud_polling"
 }

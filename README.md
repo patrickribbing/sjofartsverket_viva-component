@@ -1,14 +1,25 @@
-# viva-component
-A custom component to Home Assistant that read Swedish weather stations (ViVa). The component fetch the average wind data for a selected station.
+# sjofartsverket_viva-component
+A custom component to Home Assistant that read Swedish weather stations (ViVa) serviced by Sjöfartsverket. The component fetch the average wind data for a selected station.
 
 ## Installation
-Inside the configuration folder in Home Assistant create folder ```custom_components``` if it's not already created. Create a new folder, e.g. ```viva``` in that folder and copy the files to the folder.
+### Installation through HACS
+If you have not yet installed HACS, go get it at https://hacs.xyz/ and install.
 
-## Usage
-Set up the sensor using yaml in the configuration file (```configuration.yaml```).
+Then find the _Sjöfartsverket ViVa_ integration in HACS and install it. Configure the component as described below.
+
+Restart Home Assistant!
+
+Install the new integration through Configuration -> Integrations in HA (see below).
+### Manual installation
+Inside the configuration folder in Home Assistant create folder ```custom_components``` if it's not already created. Create a new folder, ```sjofartsverket_viva``` in that folder and copy the files to the folder. Configure the component as described below.
+
+Restart Home Assistant!
+
+## Configuration
+Set up the sensor using the configuration file (```configuration.yaml```).
 ```
 sensor vind:
-  platform: viva
+  platform: sjofartsverket_viva
   name: Vind
   region: 114
   scan_interval: 60
