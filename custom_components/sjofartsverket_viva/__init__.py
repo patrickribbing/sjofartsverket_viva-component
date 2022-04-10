@@ -1,0 +1,1 @@
+"""ViVa Sensor Platform"""
