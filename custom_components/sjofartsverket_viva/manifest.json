@@ -5,7 +5,7 @@
     "issue_tracker": "https://github.com/patrickribbing/sjofartsverket_viva-component/issues",
     "dependencies": [],
     "codeowners": ["@patrickribbing"],
-    "version": "v1.0-alpha",
+    "version": "v1.0",
     "requirements": [],
     "iot_class": "cloud_polling"
 }
