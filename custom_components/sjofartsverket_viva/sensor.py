@@ -36,6 +36,7 @@ class ViVa(Entity):
         self._station_id = station_id
         self._direction_str = ''
         self._station_name = ''
+        self._water_temp = ''
 
         # fetch data
         self.update()
@@ -59,6 +60,7 @@ class ViVa(Entity):
             'Station': self._station_name,
             'Wind': self._state,
             'Direction': self._direction_str,
+            'Water temperature': self._water_temp,
             ATTR_ATTRIBUTION: 'For details, see https://www.sjofartsverket.se/sv/tjanster/vind--och-vatteninformation-viva/'
         }
 
@@ -72,9 +74,12 @@ class ViVa(Entity):
                     wind = sample['Value'].split(' ', 1)
                     self._state = wind[1]
                     self._direction_str = wind[0]
+                if sample['Name'] == 'Vattentemp':
+                    self._water_temp = sample['Value']
             _LOGGER.debug('Fetching ViVa data from station=' + self._station_name + ' (' + str(self._station_id) + '), wind=' + str(self._state) + ', direction=' + self._direction_str)
         except:
             _LOGGER.critical('Exception fetching ViVa data from station=' + str(self._station_id))
             self._station_name = ''
             self._state = 0
             self._direction_str = ''
+            self._water_temp = ''
