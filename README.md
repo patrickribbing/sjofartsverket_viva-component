@@ -1,6 +1,6 @@
 # sjofartsverket_viva-component
-[![hacs][hacsbadge]][hacs]
-![Project Maintenance][maintenance-shield]
+[![GitHub Activity][commits-shield]][commits]
+[![License][license-shield]](LICENSE.md)
 [![BuyMeCoffee][buymecoffeebadge]][buymecoffee]
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
 
