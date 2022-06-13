@@ -1,6 +1,6 @@
 # sjofartsverket_viva-component
 ![GitHub last commit](https://img.shields.io/github/last-commit/patrickribbing/sjofartsverket_viva-component?color=red&style=plastic)
-[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/hacs/integration)
 <a href="https://www.buymeacoffee.com/patrickribbing" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
 A custom component to Home Assistant that read Swedish weather stations (ViVa) serviced by Sjöfartsverket. The component fetch the average wind data for a selected station.
