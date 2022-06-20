@@ -79,7 +79,8 @@ class ViVa(Entity):
                     self._state = wind[1]
                     self._direction_str = wind[0]
                 if sample['Name'] == 'Byvind':
-                    self._wind_max = sample['Value'].split(' ', 1)
+                    wind_max = sample['Value'].split(' ', 1)
+                    self._wind_max = wind_max[1]
                 if sample['Name'] == 'Vattentemp':
                     self._water_temp = sample['Value']
                 if sample['Name'] == 'Vattenstånd':
