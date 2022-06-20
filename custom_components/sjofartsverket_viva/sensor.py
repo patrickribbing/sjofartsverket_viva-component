@@ -54,13 +54,15 @@ class ViVa(Entity):
         return 'm/s'
 
     @property
-    def device_state_attributes(self):
+    def extra_state_attributes(self):
         return {
             'Station id': self._station_id,
             'Station': self._station_name,
             'Wind': self._state,
+            'Wind max': self._wind_max,
             'Direction': self._direction_str,
             'Water temperature': self._water_temp,
+            'Water level': self._water_level,
             ATTR_ATTRIBUTION: 'For details, see https://www.sjofartsverket.se/sv/tjanster/vind--och-vatteninformation-viva/'
         }
 
@@ -74,8 +76,12 @@ class ViVa(Entity):
                     wind = sample['Value'].split(' ', 1)
                     self._state = wind[1]
                     self._direction_str = wind[0]
+                if sample['Name'] == 'Byvind':
+                    self._wind_max = sample['Value']
                 if sample['Name'] == 'Vattentemp':
                     self._water_temp = sample['Value']
+                if sample['Name'] == 'Vattenstånd':
+                    self._water_level = sample['Value']
             _LOGGER.debug('Fetching ViVa data from station=' + self._station_name + ' (' + str(self._station_id) + '), wind=' + str(self._state) + ', direction=' + self._direction_str)
         except:
             _LOGGER.critical('Exception fetching ViVa data from station=' + str(self._station_id))
