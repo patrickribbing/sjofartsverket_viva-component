@@ -37,6 +37,8 @@ class ViVa(Entity):
         self._direction_str = ''
         self._station_name = ''
         self._water_temp = ''
+        self._wind_max = ''
+        self._water_level = ''
 
         # fetch data
         self.update()
@@ -77,7 +79,7 @@ class ViVa(Entity):
                     self._state = wind[1]
                     self._direction_str = wind[0]
                 if sample['Name'] == 'Byvind':
-                    self._wind_max = sample['Value']
+                    self._wind_max = sample['Value'].split(' ', 1)
                 if sample['Name'] == 'Vattentemp':
                     self._water_temp = sample['Value']
                 if sample['Name'] == 'Vattenstånd':
@@ -89,3 +91,5 @@ class ViVa(Entity):
             self._state = 0
             self._direction_str = ''
             self._water_temp = ''
+            self._wind_max = ''
+            self._water_level = ''
