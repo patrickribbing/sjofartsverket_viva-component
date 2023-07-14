@@ -38,6 +38,7 @@ class ViVa(Entity):
         self._station_name = ''
         self._water_temp = ''
         self._wind_max = ''
+        self._wind_heading = 0
         self._water_level = ''
 
         # fetch data
@@ -63,6 +64,7 @@ class ViVa(Entity):
             'Wind': self._state,
             'Wind max': self._wind_max,
             'Direction': self._direction_str,
+            'Wind heading': self._wind_heading,
             'Water temperature': self._water_temp,
             'Water level': self._water_level,
             ATTR_ATTRIBUTION: 'For details, see https://www.sjofartsverket.se/sv/tjanster/vind--och-vatteninformation-viva/'
@@ -78,6 +80,7 @@ class ViVa(Entity):
                     wind = sample['Value'].split(' ', 1)
                     self._state = wind[1]
                     self._direction_str = wind[0]
+                    self._wind_heading = sample['Heading']
                 if sample['Name'] == 'Byvind':
                     wind_max = sample['Value'].split(' ', 1)
                     self._wind_max = wind_max[1]
@@ -85,7 +88,7 @@ class ViVa(Entity):
                     self._water_temp = sample['Value']
                 if sample['Name'] == 'Vattenstånd':
                     self._water_level = sample['Value']
-            _LOGGER.debug('Fetching ViVa data from station=' + self._station_name + ' (' + str(self._station_id) + '), wind=' + str(self._state) + ', direction=' + self._direction_str)
+            _LOGGER.debug('Fetching ViVa data from station=' + self._station_name + ' (' + str(self._station_id) + '), wind=' + str(self._state) + ', direction=' + self._direction_str + ', heading=' + str(self._wind_heading))
         except:
             _LOGGER.critical('Exception fetching ViVa data from station=' + str(self._station_id))
             self._station_name = ''
@@ -93,4 +96,5 @@ class ViVa(Entity):
             self._direction_str = ''
             self._water_temp = ''
             self._wind_max = ''
+            self._wind_heading = 0
             self._water_level = ''
